@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LJPTRAVEL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"> <span>LJP</span> Travel</a>
+        </div>
+        <ul class="menu">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#a-propos">à propos</a></li>
+            <li><a href="#popular-destination">Service</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="responsive-menu"></div>
+    </header>
+
+    <!-- accueil section -->
+    <section id="home">
+        <h4>Nous suivre</h4>
+        <h4>Voyagez en Sécurité</h4>
+        <p> La compagnie s'engage à respecter des normes élevées en matière de sécurité et de durabilité, en
+            investissant dans des pratiques respectueuses de l'environnement
+        </p>
+
+        <a href="#" class="btn-reservation home-btn" onclick="openModal()">Réserver Maintenant</a>
+        <div class="find_trip">
+            <form action="#" method="POST">
+                <div>
+                    <label>Pays</label>
+                    <input type="text" name="country" placeholder="Entrez un Pays">
+                </div>
+                <div>
+                    <label>Ville</label>
+                    <input type="text" name="city" placeholder="Entrez une ville">
+                </div>
+                <div>
+                    <label>Région</label>
+                    <input type="text" name="region" placeholder="Entrez une région">
+                </div>
+                <input type="submit" value="Voir">
+            </form>
+        </div>
+    </section>
+
+    <!-- à propos section -->
+    <section id="a-propos">
+        <h1 class="title">à propos</h1>
+        <div class="img-desc">
+            <div class="left">
+                <img src="image/logo2.png" alt="">
+            </div>
+            <div class="right">
+                <h3>L’entreprise LJP Travel </h3>
+                <p>
+                    LJP Travel est une compagnie aérienne née de la rencontre de deux entrepreneurs visionnaires,
+                    Monsieur LOEMBA Jacques Philippe, d'origine congolaise, et Madame KOUELY, d'origine ivoirienne.
+                    C’est lors d’un forum d’entrepreneurs, qui s’est tenu le 12 avril 2024 à Paris, plus précisément au
+                    Parc des Princes, que leur collaboration est née. Partageant une vision commune du voyage et une
+                    ambition de transformer l'industrie aérienne, ils ont eu l'idée de créer une compagnie aérienne qui
+                    reflète leurs valeurs : accessibilité, confort et durabilité.
+                </p>
+                <p>
+                    Ainsi, LJP Travel voit officiellement le jour le 8 octobre 2024, avec son siège social situé dans le
+                    15ème arrondissement de Paris. La mission de la compagnie est claire : rendre le voyage accessible à
+                    tous en proposant des tarifs compétitifs, tout en garantissant un service de haute qualité. LJP
+                    Travel aspire à devenir un acteur incontournable dans le secteur aérien, en combinant des prix
+                    abordables et un confort optimal pour ses passagers.
+                </p>
+                <p>
+                    La flotte de LJP Travel est composée d’avions modernes et économes en carburant, contribuant ainsi à
+                    la réduction de l’empreinte carbone tout en assurant une expérience de vol agréable. La compagnie
+                    dessert un large éventail de destinations, allant des villes africaines comme Brazzaville et
+                    Abidjan, aux métropoles européennes telles que Paris et Rome, ainsi qu'aux grandes villes
+                    américaines comme Miami et New York. Elle se spécialise également dans les destinations de loisirs
+                    ensoleillées, répondant ainsi aux attentes des voyageurs en quête d’évasion.
+                </p>
+                <p>
+                    À bord, LJP Travel met l'accent sur la satisfaction de ses passagers en offrant divers services
+                    adaptés à leurs besoins. Les passagers peuvent ainsi profiter d’un système de divertissement
+                    moderne, de repas adaptés à différents régimes alimentaires, ainsi que d'options de confort amélioré
+                    pour rendre leur vol le plus agréable possible.
+                </p>
+                <p>
+                    En résumé, LJP Travel se positionne comme une compagnie aérienne dynamique et engagée, qui allie
+                    accessibilité, confort et responsabilité environnementale. Grâce à la vision de ses fondateurs, elle
+                    s'efforce de transformer l'expérience de voyage pour tous, tout en répondant aux défis actuels du
+                    secteur aérien.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- section destination -->
+    <section id="popular-destination">
+        <h3 class="title">Service</h3>
+        <div class="content">
+            <!-- box -->
+            <div class="box">
+                <img src="image/Congo2.jpeg" alt="">
+                <div class="content">
+                    <div>
+                        <h4>Congo Brazzaville</h4>
+                        <p>Le Congo Brazzaville est une destination qui gagne en popularité pour ses merveilles
+                            naturelles et sa riche culture.
+                        </p>
+                        <a href="https://fr.wikipedia.org/wiki/R%C3%A9publique_du_Congo">Lire Plus</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+            <div class="box">
+                <img src="image/Cote_ivoire.png" alt="">
+                <div class="content">
+                    <div>
+                        <h4>Abidjan</h4>
+                        <p>Elle était la capitale administrative et politique du pays jusqu'en 1983.Abidjan est la ville
+                            la plus peuplée de l'Afrique de l'Ouest francophone.</p>
+                        <a href="https://fr.wikipedia.org/wiki/Abidjan">Lire Plus</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+            <div class="box">
+                <img src="image/miami.jpg" alt="">
+                <div class="content">
+                    <div>
+                        <h4>Miami</h4>
+                        <p>Elle est une ville américaine située dans le sud-est de l'État de Floride, sur la baie de
+                            Biscayne. </p>
+                        <a href="https://fr.wikipedia.org/wiki/Miami">Lire Plus</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+            <div class="box">
+                <img src="image/los-angeles.jpg" alt="">
+                <div class="content">
+                    <div>
+                        <h4>New York</h4>
+                        <p>officiellement nommée City of New York, elle est la plus grande ville des États-Unis en
+                            nombre d'habitants et l'une des plus importantes du continent américain et du monde.</p>
+                        <a href="https://fr.wikipedia.org/wiki/New_York">Lire Plus</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+            <div class="box">
+                <img src="image/rome.jpg" alt="">
+                <div class="content">
+                    <div>
+                        <h4>Rome</h4>
+                        <p>Elle est la capitale de l'Italie. Située au centre ouest de la péninsule italienne, près de
+                            la mer Tyrrhénienne, elle est également la capitale de la région du Latium.</p>
+                        <a href="https://fr.wikipedia.org/wiki/Rome">Lire Plus</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+            <div class="box">
+                <img src="image/paris.jpg" alt="">
+                <div class="content">
+                    <div>
+                        <h4>Paris</h4>
+                        <p>est la capitale de la France et une collectivité à statut particulier. Divisée en vingt
+                            arrondissements, elle est le chef-lieu de la région Île-de-France et le siège de la
+                            métropole du Grand Paris.</p>
+                        <a href="https://fr.wikipedia.org/wiki/Paris">Lire Plus</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+        </div>
+    </section>
+
+    <!-- contact section -->
+    <section id="contact">
+        <h1 class="title">Contact</h1>
+        <form action="#" method="POST">
+            <div class="left-right">
+                <div class="left">
+                    <label>Nom Complet</label>
+                    <input type="text" name="full_name">
+                    <label>Objet</label>
+                    <input type="text" name="subject">
+                    <label>Email</label>
+                    <input type="text" name="email">
+                    <label>Numéro</label>
+                    <input type="text" name="phone_number">
+                    <label>Message</label>
+                    <textarea name="message" cols="30" rows="10"></textarea>
+                </div>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Copyright &copy; 2024</p> 
+    </footer>
+
+    <!-- Modal -->
+    <div id="reservation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Réserver maintenant</h2>
+            <form id="reservation-form">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="date">Date de réservation:</label>
+                <input type="date" id="date" name="date" required>
+
+                <input type="submit" value="Réserver">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('reservation-modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('reservation-modal').style.display = 'none';
+        }
+
+        // Ferme le modal si l'utilisateur clique en dehors du contenu du modal
+        window.onclick = function (event) {
+            var modal = document.getElementById('reservation-modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        var toggle_menu = document.querySelector('.responsive-menu');
+        var menu = document.querySelector('.menu');
+        toggle_menu.onclick = function () {
+            toggle_menu.classList.toggle('active');
+            menu.classList.toggle('responsive');
+        }
+    </script>
+
+</body>
+
+</html>
