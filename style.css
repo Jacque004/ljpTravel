@@ -176,6 +176,7 @@ header .logo a span {
     box-shadow: 0 0 10px #29d9d5;
 }
 
+
 /* A propos Section */
 
 #a-propos {
@@ -215,7 +216,6 @@ header .logo a span {
     height: 300px;
     width: 40%;
 }
-
 .img-desc .right {
     width: 57%;
 }
@@ -338,70 +338,128 @@ header .logo a span {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 600px; /* Limite la largeur du formulaire */
+    margin: 0 auto; /* Centre le formulaire horizontalement */
 }
-
 label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+    margin-bottom: 8px; /* Espacement uniforme entre les étiquettes */
+    font-weight: bold; /* Met en gras les étiquettes */
 }
-
 input, textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    box-sizing: border-box; /* Boîte de saisie inclut le padding et la bordure */
 }
 
-/* Responsive Design */
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
 
-@media (max-width: 1024px) {
-    header {
-        padding: 0 2rem;
-    }
-    header .logo a {
-        font-size: 2rem;
-    }
-    .btn-reservation {
-        font-size: 1.4rem;
-        padding: 0.5rem 1.5rem;
-    }
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.modal-content form input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.6rem;
+}
+
+.modal-content form input[type="submit"] {
+    background-color: #29d9d5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content form input[type="submit"]:hover {
+    background-color: #27c0c0;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+/* Responsive Menu */
+.responsive-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-menu a {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.responsive-menu a:hover {
+    color: #29d9d5;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: #333;
 }
 
 @media (max-width: 768px) {
-    #home h2 {
-        font-size: 3rem;
+    .menu {
+        display: none;
     }
-    #home h4 {
-        font-size: 3.5rem;
+    .menu-toggle {
+        display: block;
     }
-    .find_trip {
-        width: 90%;
-        flex-direction: column;
-    }
-    .find_trip form div, .find_trip form input[type="submit"] {
-        width: 100%;
-    }
-    .img-desc {
-        flex-direction: column;
-    }
-    .img-desc .left, .img-desc .right {
-        width: 100%;
-        text-align: center;
-    }
-    #popular-destination .content {
-        grid-template-columns: 1fr;
-    }
-    .box .content h4 {
-        font-size: 2rem;
-    }
-    .box .content p {
-        font-size: 1.2rem;
-    }
-    html {
-        font-size: 55%;
+    .responsive-menu {
+        display: flex;
     }
 }
