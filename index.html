@@ -16,7 +16,7 @@
         </div>
         <ul class="menu">
             <li><a href="#">Accueil</a></li>
-            <li><a href="#a-propos">à propos</a></li>
+            <li><a href="#a-propos">A propos</a></li>
             <li><a href="#popular-destination">Service</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -34,17 +34,35 @@
         <a href="#" class="btn-reservation home-btn" onclick="openModal()">Réserver Maintenant</a>
         <div class="find_trip">
             <form action="#" method="POST">
-                <div>
-                    <label>Pays</label>
-                    <input type="text" name="country" placeholder="Entrez un Pays">
+                <label>Pays</label>
+                    <select name="pays" id="pays">
+                        <option value="select"> Choisir un pays </option>
+                        <option value="France">France</option>
+                        <option value="Algérie">USA</option>
+                        <option value="Congo">Congo Brazzaville</option>
+                        <option value="Côte d'ivoire">Côte d'ivoire</option>
+                        <option value="Italie">Italie</option>
+                    </select>
                 </div>
                 <div>
                     <label>Ville</label>
-                    <input type="text" name="city" placeholder="Entrez une ville">
+                    <select name="ville" id="ville">
+                        <option value="select"> Choisir une ville </option>
+                        <option value="Abidjan">Abidjan</option>
+                        <option value="Brazzaville">Brazzaville</option>
+                        <option value="Miami">Miami</option>
+                        <option value="New York">New York</option>
+                        <option value="Italie">Rome</option>
+                        <option value="Paris">Paris</option>
+                    </select>
                 </div>
                 <div>
                     <label>Région</label>
-                    <input type="text" name="region" placeholder="Entrez une région">
+                    <select name="ville" id="ville">
+                        <option value="select"> Choisir une région </option>
+                        <option value="Abidjan">District Autonome d'Abidjan</option>
+                        <option value="Brazzaville">Pool</option>
+                    </select>
                 </div>
                 <input href ="#" type="submit" value="Voir">
             </form>
@@ -53,7 +71,7 @@
 
     <!-- à propos section -->
     <section id="a-propos">
-        <h1 class="title">à propos</h1>
+        <h1 class="title">A propos</h1>
         <div class="img-desc">
             <div class="left">
                 <img src="image/logo2.png" alt="">
