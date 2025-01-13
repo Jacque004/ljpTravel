@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-
+@media screen and (min-width: 767px)
+@media screen and (max-width: 1023px) 
 * {
     margin: 0;
     padding: 0;
