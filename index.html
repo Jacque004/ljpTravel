@@ -15,8 +15,8 @@
             <a href="index.html"> <span>LJP</span> Travel</a>
         </div>
         <ul class="menu">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#a-propos">A propos</a></li>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#a-propos">à propos</a></li>
             <li><a href="#popular-destination">Service</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -25,7 +25,6 @@
 
     <!-- accueil section -->
     <section id="home">
-       <section id="home">
         <h4>Nous suivre</h4>
         <h4>Voyagez en Sécurité</h4>
         <p> La compagnie s'engage à respecter des normes élevées en matière de sécurité et de durabilité, en
@@ -73,7 +72,7 @@
 
     <!-- à propos section -->
     <section id="a-propos">
-        <h1 class="title">A propos</h1>
+        <h1 class="title">à propos</h1>
         <div class="img-desc">
             <div class="left">
                 <img src="image/logo2.png" alt="">
@@ -132,7 +131,7 @@
                         <p>Le Congo Brazzaville est une destination qui gagne en popularité pour ses merveilles
                             naturelles et sa riche culture.
                         </p>
-                        <a href="https://fr.wikipedia.org/wiki/R%C3%A9publique_du_Congo">Lire Plus</a>
+                        <a href="https://fr.wikipedia.org/wiki/R%C3%A9publique_du_Congo" target="_blank">Lire Plus</a>
                     </div>
                 </div>
             </div>
@@ -144,7 +143,7 @@
                         <h4>Abidjan</h4>
                         <p>Elle était la capitale administrative et politique du pays jusqu'en 1983.Abidjan est la ville
                             la plus peuplée de l'Afrique de l'Ouest francophone.</p>
-                        <a href="https://fr.wikipedia.org/wiki/Abidjan">Lire Plus</a>
+                        <a href="https://fr.wikipedia.org/wiki/Abidjan" target="_blank">Lire Plus</a>
                     </div>
                 </div>
             </div>
@@ -156,7 +155,7 @@
                         <h4>Miami</h4>
                         <p>Elle est une ville américaine située dans le sud-est de l'État de Floride, sur la baie de
                             Biscayne. </p>
-                        <a href="https://fr.wikipedia.org/wiki/Miami">Lire Plus</a>
+                        <a href="https://fr.wikipedia.org/wiki/Miami" target="_blank">Lire Plus</a>
                     </div>
                 </div>
             </div>
@@ -168,7 +167,7 @@
                         <h4>New York</h4>
                         <p>officiellement nommée City of New York, elle est la plus grande ville des États-Unis en
                             nombre d'habitants et l'une des plus importantes du continent américain et du monde.</p>
-                        <a href="https://fr.wikipedia.org/wiki/New_York">Lire Plus</a>
+                        <a href="https://fr.wikipedia.org/wiki/New_York" target="_blank">Lire Plus</a>
                     </div>
                 </div>
             </div>
@@ -180,7 +179,7 @@
                         <h4>Rome</h4>
                         <p>Elle est la capitale de l'Italie. Située au centre ouest de la péninsule italienne, près de
                             la mer Tyrrhénienne, elle est également la capitale de la région du Latium.</p>
-                        <a href="https://fr.wikipedia.org/wiki/Rome">Lire Plus</a>
+                        <a href="https://fr.wikipedia.org/wiki/Rome" target="_blank">Lire Plus</a>
                     </div>
                 </div>
             </div>
@@ -193,7 +192,7 @@
                         <p>est la capitale de la France et une collectivité à statut particulier. Divisée en vingt
                             arrondissements, elle est le chef-lieu de la région Île-de-France et le siège de la
                             métropole du Grand Paris.</p>
-                        <a href="https://fr.wikipedia.org/wiki/Paris">Lire Plus</a>
+                        <a href="https://fr.wikipedia.org/wiki/Paris" target="_blank">Lire Plus</a>
                     </div>
                 </div>
             </div>
@@ -204,54 +203,29 @@
     <!-- contact section -->
     <section id="contact">
         <h1 class="title">Contact</h1>
-        <form action="#" method="POST">
+        <form action="contactForm">
             <div class="left-right">
                 <div class="left">
                     <label>Nom Complet</label>
-                    <input type="text" name="full_name">
+                    <input type="text" id="name" name="name" required><br><br>
                     <label>Objet</label>
-                    <input type="text" name="subject">
+                    <input type="text" id="subject" name="subject"><br><br>
                     <label>Email</label>
-                    <input type="text" name="email">
+                    <input type="email" id="mail" name="mail" placeholder="mailxxxx@gmail.com" required><br><br>
                     <label>Numéro</label>
-                    <input type="text" name="phone_number">
+                    <input type="tel" name="tel" id="tel" placeholder="+336 12 34 56 78" required>
                     <label>Message</label>
-                    <textarea name="message" cols="30" rows="10"></textarea>
+                    <textarea id="message" name="message" required></textarea><br><br>
                 </div>
-            <button type="submit">Envoyer</button>
+                <button type="submit">Envoyer</button>
+            </div>
         </form>
     </section>
 
     <footer>
-        <p>Copyright &copy; 2024</p> 
+        <p>Copyright &copy; 2025 LJPTRAVEL. Tous droits réservés.</p>
     </footer>
-
-    
-    <script>
-        function openModal() {
-            document.getElementById('reservation-modal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('reservation-modal').style.display = 'none';
-        }
-
-        // Ferme le modal si l'utilisateur clique en dehors du contenu du modal
-        window.onclick = function (event) {
-            var modal = document.getElementById('reservation-modal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        var toggle_menu = document.querySelector('.responsive-menu');
-        var menu = document.querySelector('.menu');
-        toggle_menu.onclick = function () {
-            toggle_menu.classList.toggle('active');
-            menu.classList.toggle('responsive');
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
