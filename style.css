@@ -1,5 +1,4 @@
-/* General Styles (Desktop-first approach) */
-
+/* Général */
 * {
     margin: 0;
     padding: 0;
@@ -7,139 +6,99 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-a {
-    text-decoration: none;
-}
-
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; /* 1rem = 10px */
     scroll-behavior: smooth;
+    scroll-padding-top: 9px;
 }
 
 body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
 }
 
-/* Responsive Menu */
-.menu {
-    display: flex;
-    align-items: center;
-}
-
-.menu li {
-    margin: 0 1.5rem;
-}
-
-.menu li a {
-    font-size: 1.6rem;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-.responsive-menu {
-    display: none;
-}
-
-/* Responsive Styles */
-@media (max-width: 767px) {
-    html {
-        font-size: 55%;
-    }
-
+/* Styles pour les grands écrans (ordinateurs de bureau) */
+@media screen and (min-width: 1024px) {
     header {
-        flex-direction: column;
-        padding: 1rem 2rem;
+        padding: 0 5%;
+        height: 70px;
     }
-
-    .menu {
-        display: none;
+    .menu li {
+        margin: 0 2rem;
     }
-
-    .menu-toggle {
-        display: block;
-        font-size: 2.5rem;
-        cursor: pointer;
-    }
-
-    .responsive-menu {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #fff;
-        width: 100%;
-        padding: 1rem 2rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .responsive-menu a {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-
     #home h2 {
-        font-size: 3.5rem;
+        font-size: 5rem;
     }
-
     #home h4 {
-        font-size: 4rem;
-    }
-
-    .find_trip {
-        width: 90%;
-        bottom: -40px;
-    }
-
-    .find_trip form div {
-        width: 100%;
-    }
-
-    .find_trip form input[type="submit"] {
-        width: 100%;
-        font-size: 1.4rem;
+        font-size: 6rem;
     }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-    html {
-        font-size: 60%;
-    }
-
+/* Styles pour les tablettes */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     header {
         padding: 0 4%;
+        height: 65px;
     }
-
     .menu li {
         margin: 0 1rem;
     }
-
-    .menu li a {
-        font-size: 1.4rem;
-    }
-
     #home h2 {
         font-size: 4rem;
     }
-
     #home h4 {
-        font-size: 4.5rem;
+        font-size: 5rem;
     }
-
     .find_trip {
-        width: 80%;
-        bottom: -50px;
+        width: 90%;
     }
+}
 
-    .find_trip form div {
-        width: 24%;
+/* Styles pour les téléphones portables */
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 50%; /* Réduit la taille globale pour les petits écrans */
     }
-
-    .find_trip form input {
+    header {
+        padding: 0 2%;
+        height: 60px;
+    }
+    .menu {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .responsive-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #home {
+        height: 90vh;
+        padding: 2rem;
+    }
+    #home h2, #home h4 {
+        font-size: 3rem;
+    }
+    #home p {
         font-size: 1.4rem;
+    }
+    .find_trip {
+        width: 100%;
+    }
+    .find_trip form div {
+        width: 100%;
+    }
+    .find_trip form input[type="submit"] {
+        width: 100%;
+    }
+    #popular-destination .content {
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        width: 90%;
     }
 }
