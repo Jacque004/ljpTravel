@@ -21,3 +21,18 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     // Réinitialise le formulaire
     document.getElementById("contactForm").reset();
 });
+
+    const toggleBtn = document.getElementById('menu-toggle');
+    const responsiveMenu = document.getElementById('responsive-menu');
+
+    toggleBtn.addEventListener('click', () => {
+        responsiveMenu.classList.toggle('show');
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    const links = responsiveMenu.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            responsiveMenu.classList.remove('show');
+        });
+    });
