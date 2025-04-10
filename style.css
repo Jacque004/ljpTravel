@@ -422,6 +422,7 @@ input, textarea {
 }
 
 /* Responsive Menu */
+/* État masqué */
 .responsive-menu {
     display: none;
     flex-direction: column;
@@ -432,34 +433,25 @@ input, textarea {
     right: 0;
     width: 250px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
 }
 
-.responsive-menu a {
-    font-size: 1.6rem;
-    color: #333;
-    margin-bottom: 1rem;
-    transition: color 0.3s ease;
+/* Quand on clique sur le menu burger */
+.responsive-menu.show {
+    display: flex;
 }
 
-.responsive-menu a:hover {
-    color: #29d9d5;
-}
-
+/* Bouton menu burger visible uniquement sur mobile */
 .menu-toggle {
     display: none;
-    cursor: pointer;
-    font-size: 2.5rem;
-    color: #333;
 }
 
 @media (max-width: 768px) {
     .menu {
-        display: none;
+        display: none; /* Masque le menu principal */
     }
     .menu-toggle {
         display: block;
     }
-    .responsive-menu {
-        display: flex;
-    }
 }
+
