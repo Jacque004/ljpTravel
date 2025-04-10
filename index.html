@@ -11,16 +11,28 @@
 <body>
 
     <header>
-        <div class="logo">
+         <div class="logo">
             <a href="index.html"> <span>LJP</span> Travel</a>
         </div>
-        <ul class="menu">
+        <!-- Icône du menu burger pour mobile -->
+        <i class="fa-solid fa-bars menu-toggle" id="menu-toggle"></i>
+
+        <!-- Menu normal (desktop) -->
+        <ul class="menu" id="main-menu">
             <li><a href="#home">Accueil</a></li>
-            <li><a href="#a-propos">A propos</a></li>
+            <li><a href="#a-propos">À propos</a></li>
             <li><a href="#popular-destination">Service</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="responsive-menu"></div>
+
+        <!-- Menu responsive (mobile) -->
+        <div class="responsive-menu" id="responsive-menu">
+            <a href="#home">Accueil</a>
+            <a href="#a-propos">À propos</a>
+            <a href="#popular-destination">Service</a>
+            <a href="#contact">Contact</a>
+        </div>
+
     </header>
 
     <!-- accueil section -->
