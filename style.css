@@ -1,11 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #29d9d5;
+    --primary-dark: #1fb8b5;
+    --secondary-color: #333;
+    --text-color: #666;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -34,8 +45,8 @@ body {
 }
 
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    box-shadow: var(--shadow);
     position: fixed;
     top: 0;
     left: 0;
@@ -44,14 +55,23 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
+    height: 70px;
     padding: 0 5%;
+    transition: var(--transition);
+}
+
+header.scrolled {
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
 }
 
 header .logo a {
-    font-size: 2.5rem;
-    color: #29d9d5;
+    font-size: 2.8rem;
+    color: var(--primary-color);
     font-weight: 700;
+    letter-spacing: -0.5px;
+    transition: var(--transition);
 }
 
 header .logo a span {
@@ -69,42 +89,59 @@ header .logo a span {
 }
 
 .menu li a {
-    color: #333;
+    color: var(--secondary-color);
     font-size: 1.6rem;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
 }
 
-.menu li a:hover {
-    color: #29d9d5;
+.menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.menu li a:hover::after {
+    width: 100%;
 }
 
 .btn-reservation {
-    color: #fff;
+    color: var(--white);
     font-size: 1.6rem;
-    border: 2px solid #29d9d5;
-    background-color: #29d9d5;
-    padding: 0.5rem 2rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
+    padding: 0.8rem 2.5rem;
+    transition: var(--transition);
     font-weight: 600;
-    border-radius: 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(41, 217, 213, 0.2);
 }
 
 .btn-reservation:hover {
-    background-color: #fff;
-    color: #29d9d5;
+    background-color: var(--white);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(41, 217, 213, 0.3);
 }
 
 /* Home Section */
 
 #home {
-    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7)), url("images/img1.jpg") no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url("images/img1.jpg") no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    color: #fff;
+    color: var(--white);
+    position: relative;
 }
 
 #home h2 {
@@ -114,14 +151,20 @@ header .logo a span {
 }
 
 #home h4 {
-    font-size: 5rem;
-    margin-bottom: 1rem;
+    font-size: 5.5rem;
+    margin-bottom: 1.5rem;
     text-transform: capitalize;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease;
 }
 
 #home p {
-    margin-bottom: 2rem;
-    font-size: 1.6rem;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    max-width: 800px;
+    line-height: 1.8;
+    animation: fadeInUp 1.2s ease;
 }
 
 .home-btn {
@@ -129,53 +172,93 @@ header .logo a span {
 }
 
 .find_trip {
-    background-color: #fff;
-    padding: 2rem;
-    width: 70%;
+    background-color: var(--white);
+    padding: 3rem;
+    width: 80%;
+    max-width: 1200px;
     position: absolute;
-    bottom: -50px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    bottom: -80px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.find_trip:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .find_trip form {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    align-items: end;
 }
 
-.find_trip form div, .find_trip form input[type="submit"] {
+.find_trip form div {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    gap: 0.8rem;
 }
 
 .find_trip form label {
-    color: #333;
+    color: var(--secondary-color);
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
-.find_trip form input {
-    padding: 1rem;
-    background-color: #f4f4f4;
+.find_trip form select {
+    padding: 1.2rem;
+    background-color: var(--light-bg);
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1.6rem;
+    transition: var(--transition);
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5rem;
+}
+
+.find_trip form select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(41, 217, 213, 0.1);
+    outline: none;
 }
 
 .find_trip form input[type="submit"] {
-    background-color: #29d9d5;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .find_trip form input[type="submit"]:hover {
-    box-shadow: 0 0 10px #29d9d5;
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(41, 217, 213, 0.3);
 }
 
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* A propos Section */
 
@@ -334,25 +417,53 @@ header .logo a span {
 }
 
 #contact form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Limite la largeur du formulaire */
-    margin: 0 auto; /* Centre le formulaire horizontalement */
+    background-color: var(--white);
+    padding: 4rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
 }
+
 label {
     display: block;
-    margin-bottom: 8px; /* Espacement uniforme entre les étiquettes */
-    font-weight: bold; /* Met en gras les étiquettes */
+    margin-bottom: 8px;
+    font-weight: bold;
 }
+
 input, textarea {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Boîte de saisie inclut le padding et la bordure */
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    transition: var(--transition);
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(41, 217, 213, 0.1);
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1.2rem 3rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(41, 217, 213, 0.3);
 }
 
 /* Modal */
@@ -424,34 +535,123 @@ input, textarea {
 /* Responsive Menu */
 /* État masqué */
 .responsive-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    padding: 2rem;
     display: none;
     flex-direction: column;
-    background-color: #fff;
-    padding: 1rem 2rem;
-    position: fixed;
-    top: 60px;
-    right: 0;
-    width: 250px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1001;
+    gap: 1.5rem;
+    box-shadow: var(--shadow);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: var(--transition);
 }
 
-/* Quand on clique sur le menu burger */
 .responsive-menu.show {
-    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.responsive-menu a {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.responsive-menu a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    padding-left: 2rem;
 }
 
 /* Bouton menu burger visible uniquement sur mobile */
 .menu-toggle {
     display: none;
+    font-size: 2.4rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.menu-toggle:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 992px) {
+    .menu {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .find_trip {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    #home h4 {
+        font-size: 4rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .menu {
-        display: none; /* Masque le menu principal */
+    html {
+        font-size: 55%;
     }
-    .menu-toggle {
-        display: block;
+
+    .find_trip {
+        position: relative;
+        bottom: 0;
+        margin-top: 3rem;
+        width: 95%;
+    }
+
+    .find_trip form {
+        grid-template-columns: 1fr;
+    }
+
+    .img-desc {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .img-desc .left,
+    .img-desc .right {
+        width: 100%;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--white);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }
 
