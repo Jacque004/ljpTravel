@@ -1872,3 +1872,1117 @@ a:focus-visible {
         transform: rotate(360deg);
     }
 }
+
+/* Media Queries pour le responsive complet */
+/* ========================================== */
+
+/* Très grands écrans (1400px+) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero-content h2 {
+        font-size: 6rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 7rem;
+    }
+    
+    .hero-content p {
+        font-size: 2rem;
+    }
+    
+    .find_trip {
+        width: 80%;
+        max-width: 1200px;
+    }
+    
+    .destinations-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4rem;
+    }
+}
+
+/* Grands écrans (1200px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+        padding: 0 20px;
+    }
+    
+    .hero-content h2 {
+        font-size: 5.5rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 6.5rem;
+    }
+    
+    .destinations-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+}
+
+/* Écrans moyens (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+        padding: 0 15px;
+    }
+    
+    .hero-content h2 {
+        font-size: 5rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 6rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.8rem;
+        max-width: 700px;
+    }
+    
+    .find_trip {
+        width: 85%;
+        padding: 2.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .destinations-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .img-desc {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 4rem;
+    }
+}
+
+/* Tablettes (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    html {
+        font-size: 58%;
+    }
+    
+    .container {
+        max-width: 720px;
+        padding: 0 15px;
+    }
+    
+    header {
+        height: 75px;
+        padding: 0 4%;
+    }
+    
+    .logo a {
+        font-size: 2.6rem;
+    }
+    
+    .menu {
+        gap: 2.5rem;
+    }
+    
+    .menu li a {
+        font-size: 1.5rem;
+    }
+    
+    /* Section Accueil */
+    .hero-content {
+        max-width: 700px;
+        padding: 0 15px;
+    }
+    
+    .hero-content h2 {
+        font-size: 4.5rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 5.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.7rem;
+        max-width: 600px;
+    }
+    
+    .home-btn {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.6rem;
+    }
+    
+    /* Formulaire de recherche */
+    .find_trip {
+        width: 90%;
+        padding: 2.5rem;
+        bottom: -50px;
+    }
+    
+    .find_trip h3 {
+        font-size: 2.2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    /* Sections générales */
+    .destinations-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .title {
+        font-size: 3.4rem;
+        margin-bottom: 5rem;
+    }
+    
+    section {
+        padding: 7rem 0;
+    }
+    
+    /* Section À propos */
+    .img-desc {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        text-align: center;
+    }
+    
+    .img-desc .right h3 {
+        font-size: 2.8rem;
+    }
+    
+    .img-desc .right p {
+        font-size: 1.6rem;
+    }
+    
+    /* Section Contact */
+    .contact-form {
+        padding: 2.5rem;
+        margin: 0 1rem;
+    }
+    
+    .contact-form .form-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+}
+
+/* Tablettes petites et grands mobiles (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+    html {
+        font-size: 56.25%;
+    }
+    
+    .container {
+        max-width: 540px;
+        padding: 0 15px;
+    }
+    
+    header {
+        height: 70px;
+        padding: 0 3%;
+    }
+    
+    .logo a {
+        font-size: 2.4rem;
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu.active {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        box-shadow: var(--shadow);
+        padding: 2rem;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        animation: slideDown 0.3s ease;
+    }
+    
+    .nav-menu.active .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .nav-menu.active .menu li a {
+        font-size: 1.8rem;
+        padding: 1rem;
+        display: block;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .nav-menu.active .menu li a:last-child {
+        border-bottom: none;
+    }
+    
+    /* Section Accueil */
+    .hero-content {
+        padding: 0 15px;
+        max-width: 500px;
+    }
+    
+    .hero-content h2 {
+        font-size: 3.8rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 4.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.6rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .home-btn {
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+    }
+    
+    /* Formulaire de recherche */
+    .find_trip {
+        position: relative;
+        bottom: 0;
+        margin-top: 3rem;
+        width: 95%;
+        padding: 2rem;
+    }
+    
+    .find_trip h3 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Sections générales */
+    .destinations-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .destination-card {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    .title {
+        font-size: 3.2rem;
+        margin-bottom: 4rem;
+    }
+    
+    section {
+        padding: 6rem 0;
+    }
+    
+    /* Section À propos */
+    .img-desc .right h3 {
+        font-size: 2.6rem;
+    }
+    
+    .img-desc .right p {
+        font-size: 1.5rem;
+    }
+    
+    /* Section Contact */
+    .contact-form {
+        padding: 2.5rem;
+        margin: 0 1rem;
+    }
+    
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Mobiles moyens (480px - 575px) */
+@media (max-width: 575px) and (min-width: 480px) {
+    html {
+        font-size: 52%;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    header {
+        height: 65px;
+        padding: 0 2%;
+    }
+    
+    .logo a {
+        font-size: 2.2rem;
+    }
+    
+    .menu-toggle i {
+        font-size: 2.2rem;
+    }
+    
+    .nav-menu.active {
+        top: 65px;
+        padding: 1.5rem;
+    }
+    
+    .nav-menu.active .menu li a {
+        font-size: 1.7rem;
+        padding: 0.8rem;
+    }
+    
+    /* Section Accueil */
+    .hero-content {
+        padding: 0 10px;
+        max-width: 450px;
+    }
+    
+    .hero-content h2 {
+        font-size: 3.2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 4.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+    
+    .home-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 1.4rem;
+    }
+    
+    /* Formulaire de recherche */
+    .find_trip {
+        width: 98%;
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .find_trip h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .form-group label {
+        font-size: 1.3rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+    
+    .search-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+    }
+    
+    /* Sections générales */
+    .destinations-grid {
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .destination-card .card-content {
+        padding: 2rem;
+    }
+    
+    .destination-card .card-content h4 {
+        font-size: 2.2rem;
+    }
+    
+    .destination-card .card-content p {
+        font-size: 1.4rem;
+    }
+    
+    .click-hint {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .title {
+        font-size: 2.8rem;
+        margin-bottom: 3rem;
+    }
+    
+    section {
+        padding: 5rem 0;
+    }
+    
+    .img-desc .right h3 {
+        font-size: 2.4rem;
+    }
+    
+    .img-desc .right p {
+        font-size: 1.4rem;
+    }
+    
+    /* Section Contact */
+    .contact-form {
+        padding: 2rem;
+        margin: 0 0.5rem;
+    }
+    
+    .submit-btn {
+        padding: 1.2rem 2rem;
+        font-size: 1.5rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Petits mobiles (360px - 479px) */
+@media (max-width: 479px) and (min-width: 360px) {
+    html {
+        font-size: 50%;
+    }
+    
+    .container {
+        padding: 0 8px;
+    }
+    
+    header {
+        height: 60px;
+        padding: 0 2%;
+    }
+    
+    .logo a {
+        font-size: 2rem;
+    }
+    
+    .menu-toggle i {
+        font-size: 2rem;
+    }
+    
+    .nav-menu.active {
+        top: 60px;
+        padding: 1.2rem;
+    }
+    
+    .nav-menu.active .menu li a {
+        font-size: 1.6rem;
+        padding: 0.7rem;
+    }
+    
+    /* Section Accueil */
+    .hero-content {
+        padding: 0 8px;
+        max-width: 400px;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 3.6rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 1.8rem;
+        line-height: 1.5;
+    }
+    
+    .home-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 1.3rem;
+    }
+    
+    /* Formulaire de recherche */
+    .find_trip {
+        width: 98%;
+        padding: 1.2rem;
+        margin-top: 1.5rem;
+    }
+    
+    .find_trip h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 0.8rem;
+        font-size: 1.4rem;
+    }
+    
+    .search-btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 1.4rem;
+    }
+    
+    /* Sections générales */
+    .destinations-grid {
+        gap: 1.2rem;
+        padding: 0 0.5rem;
+    }
+    
+    .destination-card .card-content {
+        padding: 1.5rem;
+    }
+    
+    .destination-card .card-content h4 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .destination-card .card-content p {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .click-hint {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .title {
+        font-size: 2.6rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    section {
+        padding: 4rem 0;
+    }
+    
+    .img-desc .right h3 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .img-desc .right p {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Section Contact */
+    .contact-form {
+        padding: 1.5rem;
+        margin: 0 0.3rem;
+    }
+    
+    .contact-form .form-row {
+        gap: 1rem;
+    }
+    
+    .submit-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1.4rem;
+    }
+    
+    /* Message de succès */
+    .success-message {
+        padding: 2rem;
+        margin: 0 0.5rem 2rem;
+    }
+    
+    .success-content h3 {
+        font-size: 2.4rem;
+    }
+    
+    .success-content p {
+        font-size: 1.4rem;
+    }
+    
+    .close-success-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.3rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        gap: 1.5rem;
+    }
+    
+    .footer-section h4 {
+        font-size: 1.8rem;
+    }
+    
+    .footer-section p,
+    .footer-section li {
+        font-size: 1.3rem;
+    }
+    
+    .social-links a {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    
+    /* Modals */
+    .modal-content {
+        padding: 1.5rem;
+        margin: 1rem;
+        width: 95%;
+    }
+    
+    .modal-content h2 {
+        font-size: 2rem;
+    }
+    
+    .destination-detail-modal {
+        margin: 1rem;
+        max-height: 98vh;
+    }
+    
+    .destination-header {
+        padding: 1.5rem;
+    }
+    
+    .destination-header img {
+        height: 150px;
+    }
+    
+    .destination-info h2 {
+        font-size: 2.6rem;
+    }
+    
+    .destination-info p {
+        font-size: 1.4rem;
+    }
+    
+    .pricing-section,
+    .flight-details {
+        padding: 1.5rem;
+    }
+    
+    .pricing-section h3,
+    .flight-details h3 {
+        font-size: 2rem;
+    }
+    
+    .pricing-cards {
+        gap: 1rem;
+    }
+    
+    .card-header {
+        padding: 1.5rem;
+    }
+    
+    .card-header h4 {
+        font-size: 1.8rem;
+    }
+    
+    .amount {
+        font-size: 3rem;
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+    }
+    
+    .features li {
+        font-size: 1.3rem;
+    }
+    
+    .book-btn {
+        padding: 1.2rem;
+        font-size: 1.4rem;
+    }
+    
+    .details-grid {
+        gap: 1rem;
+    }
+    
+    .detail-item {
+        padding: 1.2rem;
+    }
+    
+    .detail-item h5 {
+        font-size: 1.4rem;
+    }
+    
+    .detail-item p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Très petits mobiles (320px - 359px) */
+@media (max-width: 359px) {
+    html {
+        font-size: 45%;
+    }
+    
+    .container {
+        padding: 0 5px;
+    }
+    
+    header {
+        height: 55px;
+        padding: 0 1%;
+    }
+    
+    .logo a {
+        font-size: 1.8rem;
+    }
+    
+    .menu-toggle i {
+        font-size: 1.8rem;
+    }
+    
+    .nav-menu.active {
+        top: 55px;
+        padding: 1rem;
+    }
+    
+    .nav-menu.active .menu li a {
+        font-size: 1.5rem;
+        padding: 0.6rem;
+    }
+    
+    /* Section Accueil */
+    .hero-content {
+        padding: 0 5px;
+        max-width: 350px;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.4rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
+    }
+    
+    .home-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 1.2rem;
+    }
+    
+    /* Formulaire de recherche */
+    .find_trip {
+        width: 98%;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .find_trip h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .form-group label {
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 0.7rem;
+        font-size: 1.3rem;
+    }
+    
+    .search-btn {
+        padding: 0.7rem 1rem;
+        font-size: 1.3rem;
+    }
+    
+    /* Sections générales */
+    .destinations-grid {
+        gap: 1rem;
+        padding: 0 0.3rem;
+    }
+    
+    .destination-card .card-content {
+        padding: 1.2rem;
+    }
+    
+    .destination-card .card-content h4 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .destination-card .card-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .click-hint {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .title {
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .img-desc .right h3 {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .img-desc .right p {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    /* Section Contact */
+    .contact-form {
+        padding: 1.2rem;
+        margin: 0 0.2rem;
+    }
+    
+    .submit-btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 1.3rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        gap: 1.2rem;
+    }
+    
+    .footer-section h4 {
+        font-size: 1.6rem;
+    }
+    
+    .footer-section p,
+    .footer-section li {
+        font-size: 1.2rem;
+    }
+    
+    .social-links a {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+/* Orientation paysage sur mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-content h4 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .home-btn {
+        margin-bottom: 1rem;
+    }
+    
+    .find_trip {
+        position: relative;
+        bottom: 0;
+        margin-top: 1rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .destination-detail-modal {
+        max-height: 98vh;
+    }
+}
+
+/* Animations pour le menu mobile */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Améliorations pour l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus visible pour l'accessibilité */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Améliorations pour le tactile sur mobile */
+@media (hover: none) and (pointer: coarse) {
+    .destination-card:hover {
+        transform: none;
+    }
+    
+    .destination-card:active {
+        transform: scale(0.98);
+    }
+    
+    .btn-reservation:hover,
+    .search-btn:hover,
+    .submit-btn:hover,
+    .book-btn:hover {
+        transform: none;
+    }
+    
+    .btn-reservation:active,
+    .search-btn:active,
+    .submit-btn:active,
+    .book-btn:active {
+        transform: scale(0.95);
+    }
+    
+    .menu li a:hover::after {
+        width: 0;
+    }
+    
+    .menu li a:active::after {
+        width: 100%;
+    }
+}
+
+/* Optimisations pour les écrans haute densité */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .card-image img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Améliorations pour les écrans tactiles */
+@media (pointer: coarse) {
+    .menu li a {
+        padding: 1rem 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        min-height: 44px;
+    }
+    
+    .btn-reservation,
+    .search-btn,
+    .submit-btn,
+    .book-btn {
+        min-height: 44px;
+    }
+    
+    .close,
+    .close-success-btn {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* États de chargement */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--primary-color);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
