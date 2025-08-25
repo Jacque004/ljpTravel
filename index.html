@@ -4,240 +4,671 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LJPTRAVEL</title>
+    <title>LJPTRAVEL - Voyagez en Sécurité</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-
     <header>
-         <div class="logo">
+        <div class="logo">
             <a href="index.html"> <span>LJP</span> Travel</a>
         </div>
-        <!-- Icône du menu burger pour mobile -->
-        <i class="fa-solid fa-bars menu-toggle" id="menu-toggle"></i>
-
-        <!-- Menu normal (desktop) -->
-        <ul class="menu" id="main-menu">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#a-propos">À propos</a></li>
-            <li><a href="#popular-destination">Service</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <!-- Menu responsive (mobile) -->
-        <div class="responsive-menu" id="responsive-menu">
-            <a href="#home">Accueil</a>
-            <a href="#a-propos">À propos</a>
-            <a href="#popular-destination">Service</a>
-            <a href="#contact">Contact</a>
+        <nav class="nav-menu">
+            <ul class="menu">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#popular-destination">Destinations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
         </div>
-
     </header>
 
     <!-- accueil section -->
     <section id="home">
-        <h4>Nous suivre</h4>
-        <h4>Voyagez en Sécurité</h4>
-        <p> La compagnie s'engage à respecter des normes élevées en matière de sécurité et de durabilité, en
-            investissant dans des pratiques respectueuses de l'environnement
-        </p>
+        <div class="hero-content">
+            <h2>Nous suivre</h2>
+            <h4>Voyagez en Sécurité</h4>
+            <p>La compagnie s'engage à respecter des normes élevées en matière de sécurité et de durabilité, en
+                investissant dans des pratiques respectueuses de l'environnement
+            </p>
+            <a href="#" class="btn-reservation home-btn" onclick="openModal()">
+                Réserver Maintenant
+            </a>
+        </div>
 
-        <a href="#home" class="btn-reservation home-btn" onclick="openModal()">Réserver Maintenant</a>
         <div class="find_trip">
-            <form action="#" method="POST">
-                <div>
-                    <label>Pays</label>
-                    <select name="pays" id="pays">
-                        <option value="select"> Choisir un pays </option>
-                        <option value="France">France</option>
-                        <option value="USA">USA</option>
-                        <option value="Congo">Congo Brazzaville</option>
-                        <option value="Côte d'ivoire">Côte d'ivoire</option>
-                        <option value="Italie">Italie</option>
-                    </select>
+            <h3>Trouver votre voyage</h3>
+            <form action="process_reservation.php" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Pays</label>
+                        <input type="text" name="country" placeholder="Entrez un pays" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ville</label>
+                        <input type="text" name="city" placeholder="Entrez une ville" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Région</label>
+                        <input type="text" name="region" placeholder="Entrez une région">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="search-btn">
+                            Rechercher
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <label>Ville</label>
-                    <select name="ville" id="ville">
-                        <option value="select"> Choisir une ville </option>
-                        <option value="Abidjan">Abidjan</option>
-                        <option value="Brazzaville">Brazzaville</option>
-                        <option value="Miami">Miami</option>
-                        <option value="New York">New York</option>
-                        <option value="Rome">Rome</option>
-                        <option value="Paris">Paris</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Région</label>
-                    <select name="region" id="region">
-                        <option value="select"> Choisir une région </option>
-                        <option value="Abidjan">District Autonome d'Abidjan</option>
-                        <option value="Brazzaville">Pool</option>
-                    </select>
-                </div>
-                <input href="#home" type="submit" value="Voir">
             </form>
         </div>
     </section>
 
     <!-- à propos section -->
     <section id="a-propos">
-        <h1 class="title">A propos</h1>
-        <div class="img-desc">
-            <div class="left">
-                <img src="image/logo2.png" alt="">
-            </div>
-            <div class="right">
-                <h3>L'entreprise LJP Travel </h3>
-                <p>
-                    LJP Travel est une compagnie aérienne née de la rencontre de deux entrepreneurs visionnaires,
-                    Monsieur Jacques Philippe Loemba, d'origine congolaise, et Madame Koel, d'origine ivoirienne.
-                    C'est lors d'un forum d'entrepreneurs, qui s'est tenu le 12 avril 2024 à Paris, plus précisément au
-                    Parc des Princes, que leur collaboration est née. Partageant une vision commune du voyage et une
-                    ambition de transformer l'industrie aérienne, ils ont eu l'idée de créer une compagnie aérienne qui
-                    reflète leurs valeurs : accessibilité, confort et durabilité.
-                </p>
-                <p>
-                    Ainsi, LJP Travel voit officiellement le jour le 8 octobre 2024, avec son siège social situé dans le
-                    15ème arrondissement de Paris. La mission de la compagnie est claire : rendre le voyage accessible à
-                    tous en proposant des tarifs compétitifs, tout en garantissant un service de haute qualité. LJP
-                    Travel aspire à devenir un acteur incontournable dans le secteur aérien, en combinant des prix
-                    abordables et un confort optimal pour ses passagers.
-                </p>
-                <p>
-                    La flotte de LJP Travel est composée d'avions modernes et économes en carburant, contribuant ainsi à
-                    la réduction de l'empreinte carbone tout en assurant une expérience de vol agréable. La compagnie
-                    dessert un large éventail de destinations, allant des villes africaines comme Brazzaville et
-                    Abidjan, aux métropoles européennes telles que Paris et Rome, ainsi qu'aux grandes villes
-                    américaines comme Miami et New York. Elle se spécialise également dans les destinations de loisirs
-                    ensoleillées, répondant ainsi aux attentes des voyageurs en quête d'évasion.
-                </p>
-                <p>
-                    À bord, LJP Travel met l'accent sur la satisfaction de ses passagers en offrant divers services
-                    adaptés à leurs besoins. Les passagers peuvent ainsi profiter d'un système de divertissement
-                    moderne, de repas adaptés à différents régimes alimentaires, ainsi que d'options de confort amélioré
-                    pour rendre leur vol le plus agréable possible.
-                </p>
-                <p>
-                    En résumé, LJP Travel se positionne comme une compagnie aérienne dynamique et engagée, qui allie
-                    accessibilité, confort et responsabilité environnementale. Grâce à la vision de ses fondateurs, elle
-                    s'efforce de transformer l'expérience de voyage pour tous, tout en répondant aux défis actuels du
-                    secteur aérien.
-                </p>
+        <div class="container">
+            <h1 class="title">À propos</h1>
+            <div class="img-desc">
+                <div class="left">
+                    <img src="images/logo2.png" alt="Logo LJP Travel">
+                </div>
+                <div class="right">
+                    <h3>L'entreprise LJP Travel</h3>
+                    <p>
+                        LJP Travel est une compagnie aérienne née de la rencontre de deux entrepreneurs visionnaires,
+                        Monsieur Jacques Philippe Loemba, d'origine congolaise, et Madame Koel, d'origine ivoirienne.
+                        C'est lors d'un forum d'entrepreneurs, qui s'est tenu le 12 avril 2024 à Paris, plus précisément
+                        au Parc des Princes, que leur collaboration est née. Partageant une vision commune du voyage et
+                        une ambition de transformer l'industrie aérienne, ils ont eu l'idée de créer une compagnie
+                        aérienne qui reflète leurs valeurs : accessibilité, confort et durabilité.
+
+                        Ainsi, LJP Travel voit officiellement le jour le 8 octobre 2024, avec son siège social situé
+                        dans le 15ème arrondissement de Paris. La mission de la compagnie est claire : rendre le voyage
+                        accessible à tous en proposant des tarifs compétitifs, tout en garantissant un service de haute
+                        qualité. LJP Travel aspire à devenir un acteur incontournable dans le secteur aérien, en
+                        combinant des prix abordables et un confort optimal pour ses passagers.
+
+                        La flotte de LJP Travel est composée d'avions modernes et économes en carburant, contribuant
+                        ainsi à la réduction de l'empreinte carbone tout en assurant une expérience de vol agréable. La
+                        compagnie dessert un large éventail de destinations, allant des villes africaines comme
+                        Brazzaville et Abidjan, aux métropoles européennes telles que Paris et Rome, ainsi qu'aux
+                        grandes villes américaines comme Miami et New York. Elle se spécialise également dans les
+                        destinations de loisirs ensoleillées, répondant ainsi aux attentes des voyageurs en quête
+                        d'évasion.
+
+                        À bord, LJP Travel met l'accent sur la satisfaction de ses passagers en offrant divers services
+                        adaptés à leurs besoins. Les passagers peuvent ainsi profiter d'un système de divertissement
+                        moderne, de repas adaptés à différents régimes alimentaires, ainsi que d'options de confort
+                        amélioré pour rendre leur vol le plus agréable possible.
+
+                        En résumé, LJP Travel se positionne comme une compagnie aérienne dynamique et engagée, qui allie
+                        accessibilité, confort et responsabilité environnementale. Grâce à la vision de ses fondateurs,
+                        elle s'efforce de transformer l'expérience de voyage pour tous, tout en répondant aux défis
+                        actuels du secteur aérien.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- section destination -->
     <section id="popular-destination">
-        <h3 class="title">Service</h3>
-        <div class="content">
-            <!-- box -->
-            <div class="box">
-                <img src="image/Congo2.jpeg" alt="">
-                <div class="content">
-                    <div>
+        <div class="container">
+            <h3 class="title">Destinations proposées</h3>
+            <div class="destinations-grid">
+                <!-- box -->
+                <div class="destination-card" onclick="openDestinationModal('congo', 'Congo Brazzaville', 'images/Congo2.jpeg', 'Le Congo Brazzaville est une destination qui gagne en popularité pour ses merveilles naturelles et sa riche culture.')">
+                    <div class="card-image">
+                        <img src="images/Congo2.jpeg" alt="Congo Brazzaville">
+                    </div>
+                    <div class="card-content">
                         <h4>Congo Brazzaville</h4>
                         <p>Le Congo Brazzaville est une destination qui gagne en popularité pour ses merveilles
                             naturelles et sa riche culture.
-                        </p><br>
-                        <a href="https://fr.wikipedia.org/wiki/R%C3%A9publique_du_Congo" target="_blank">Lire Plus</a>
+                        </p>
+                        <div class="card-actions">
+                            <span class="click-hint"><i class="fas fa-mouse-pointer"></i> Cliquez pour plus de détails</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- box -->
-            <div class="box">
-                <img src="image/Cote_ivoire.png" alt="">
-                <div class="content">
-                    <div>
+                
+                <!-- box -->
+                <div class="destination-card" onclick="openDestinationModal('abidjan', 'Abidjan', 'images/Cote_ivoire.png', 'Elle était la capitale administrative et politique du pays jusqu\'en 1983. Abidjan est la ville la plus peuplée de l\'Afrique de l\'Ouest francophone.')">
+                    <div class="card-image">
+                        <img src="images/Cote_ivoire.png" alt="Abidjan">
+                    </div>
+                    <div class="card-content">
                         <h4>Abidjan</h4>
-                        <p>Elle était la capitale administrative et politique du pays jusqu'en 1983.Abidjan est la ville
-                            la plus peuplée de l'Afrique de l'Ouest francophone.</p><br>
-                        <a href="https://fr.wikipedia.org/wiki/Abidjan" target="_blank">Lire Plus</a>
+                        <p>Elle était la capitale administrative et politique du pays jusqu'en 1983. Abidjan est la
+                            ville la plus peuplée de l'Afrique de l'Ouest francophone.</p>
+                        <div class="card-actions">
+                            <span class="click-hint"><i class="fas fa-mouse-pointer"></i> Cliquez pour plus de détails</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- box -->
-            <div class="box">
-                <img src="image/Miami.jpg" alt="">
-                <div class="content">
-                    <div>
+                
+                <!-- box -->
+                <div class="destination-card" onclick="openDestinationModal('miami', 'Miami', 'images/miami.jpg', 'Elle est une ville américaine située dans le sud-est de l\'État de Floride, sur la baie de Biscayne.')">
+                    <div class="card-image">
+                        <img src="images/miami.jpg" alt="Miami">
+                    </div>
+                    <div class="card-content">
                         <h4>Miami</h4>
                         <p>Elle est une ville américaine située dans le sud-est de l'État de Floride, sur la baie de
-                            Biscayne. </p><br>
-                        <a href="https://fr.wikipedia.org/wiki/Miami" target="_blank">Lire Plus</a>
+                            Biscayne.</p>
+                        <div class="card-actions">
+                            <span class="click-hint"><i class="fas fa-mouse-pointer"></i> Cliquez pour plus de détails</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- box -->
-            <div class="box">
-                <img src="image/los-angeles.jpg" alt="">
-                <div class="content">
-                    <div>
-                        <h4>New York</h4>
-                        <p>officiellement nommée City of New York, elle est la plus grande ville des États-Unis en
-                            nombre d'habitants et l'une des plus importantes du continent américain et du monde.</p><br>
-                        <a href="https://fr.wikipedia.org/wiki/New_York" target="_blank">Lire Plus</a>
+                
+                <!-- box -->
+                <div class="destination-card" onclick="openDestinationModal('los-angeles', 'Los Angeles', 'images/los-angeles.jpg', 'Officiellement nommée City of Los Angeles, elle est la plus grande ville de Californie et l\'une des plus importantes du continent américain.')">
+                    <div class="card-image">
+                        <img src="images/los-angeles.jpg" alt="Los Angeles">
+                    </div>
+                    <div class="card-content">
+                        <h4>Los Angeles</h4>
+                        <p>Officiellement nommée City of Los Angeles, elle est la plus grande ville de Californie et
+                            l'une des plus importantes du continent américain.</p>
+                        <div class="card-actions">
+                            <span class="click-hint"><i class="fas fa-mouse-pointer"></i> Cliquez pour plus de détails</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- box -->
-            <div class="box">
-                <img src="image/rome.jpg" alt="">
-                <div class="content">
-                    <div>
+                
+                <!-- box -->
+                <div class="destination-card" onclick="openDestinationModal('rome', 'Rome', 'images/rome.jpg', 'Elle est la capitale de l\'Italie. Située au centre ouest de la péninsule italienne, près de la mer Tyrrhénienne, elle est également la capitale de la région du Latium.')">
+                    <div class="card-image">
+                        <img src="images/rome.jpg" alt="Rome">
+                    </div>
+                    <div class="card-content">
                         <h4>Rome</h4>
                         <p>Elle est la capitale de l'Italie. Située au centre ouest de la péninsule italienne, près de
-                            la mer Tyrrhénienne, elle est également la capitale de la région du Latium.</p><br>
-                        <a href="https://fr.wikipedia.org/wiki/Rome" target="_blank">Lire Plus</a>
+                            la mer Tyrrhénienne, elle est également la capitale de la région du Latium.</p>
+                        <div class="card-actions">
+                            <span class="click-hint"><i class="fas fa-mouse-pointer"></i> Cliquez pour plus de détails</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- box -->
-            <div class="box">
-                <img src="image/paris.jpg" alt="">
-                <div class="content">
-                    <div>
+                
+                <!-- box -->
+                <div class="destination-card" onclick="openDestinationModal('paris', 'Paris', 'images/paris.jpg', 'Est la capitale de la France et une collectivité à statut particulier. Divisée en vingt arrondissements, elle est le chef-lieu de la région Île-de-France et le siège de la métropole du Grand Paris.')">
+                    <div class="card-image">
+                        <img src="images/paris.jpg" alt="Paris">
+                    </div>
+                    <div class="card-content">
                         <h4>Paris</h4>
-                        <p>est la capitale de la France et une collectivité à statut particulier. Divisée en vingt
+                        <p>Est la capitale de la France et une collectivité à statut particulier. Divisée en vingt
                             arrondissements, elle est le chef-lieu de la région Île-de-France et le siège de la
-                            métropole du Grand Paris.</p><br>
-                        <a href="https://fr.wikipedia.org/wiki/Paris" target="_blank">Lire Plus</a>
+                            métropole du Grand Paris.</p>
+                        <div class="card-actions">
+                            <span class="click-hint"><i class="fas fa-mouse-pointer"></i> Cliquez pour plus de détails</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- box -->
         </div>
     </section>
 
     <!-- contact section -->
     <section id="contact">
-        <h1 class="title">Contact</h1>
-        <form action="contactForm">
-            <div class="left-right">
-                <div class="left">
-                    <label>Nom Complet</label>
-                    <input type="text" id="name" name="name" required><br><br>
-                    <label>Objet</label>
-                    <input type="text" id="subject" name="subject"><br><br>
-                    <label>Email</label>
-                    <input type="email" id="mail" name="mail" placeholder="mailxxxx@gmail.com" required><br><br>
-                    <label>Numéro</label>
-                    <input type="tel" name="tel" id="tel" placeholder="+336 12 34 56 78" required>
-                    <label>Message</label>
-                    <textarea id="message" name="message" required></textarea><br><br>
+        <div class="container">
+            <h1 class="title">Contact</h1>
+            
+            <!-- Message de confirmation -->
+            <div id="success-message" class="success-message" style="display: none;">
+                <div class="success-content">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Message envoyé avec succès !</h3>
+                    <p>Votre demande a bien été envoyée. Nous vous répondrons dans les plus brefs délais.</p>
+                    <button onclick="hideSuccessMessage()" class="close-success-btn">
+                        <i class="fas fa-times"></i> Fermer
+                    </button>
                 </div>
-                <button type="submit">Envoyer</button>
             </div>
-        </form>
+            
+            <form class="contact-form" id="contact-form" action="process_contact.php" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label> Nom Complet</label>
+                        <input type="text" name="full_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Objet</label>
+                        <input type="text" name="subject" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Numéro</label>
+                        <input type="tel" name="phone_number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" cols="30" rows="8" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    Envoyer
+                </button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>Copyright &copy; 2025 LJPTRAVEL. Tous droits réservés.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LJP Travel</h4>
+                    <p>Voyagez en sécurité avec notre compagnie aérienne de confiance.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#a-propos">À propos</a></li>
+                        <li><a href="#popular-destination">Destinations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LJP Travel. Tous droits réservés.</p>
+            </div>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- Modal -->
+    <div id="reservation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2><i class="fas fa-plane"></i> Réserver maintenant</h2>
+            <form id="reservation-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Nom complet:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date"><i class="fas fa-calendar"></i> Date de réservation:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination"><i class="fas fa-map-marker-alt"></i> Destination:</label>
+                    <select id="destination" name="destination" required>
+                        <option value="">Sélectionnez une destination</option>
+                        <option value="congo">Congo Brazzaville</option>
+                        <option value="abidjan">Abidjan</option>
+                        <option value="miami">Miami</option>
+                        <option value="los-angeles">Los Angeles</option>
+                        <option value="rome">Rome</option>
+                        <option value="paris">Paris</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-check"></i> Confirmer la réservation
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Destination Détail -->
+    <div id="destination-modal" class="modal">
+        <div class="modal-content destination-detail-modal">
+            <span class="close" onclick="closeDestinationModal()">&times;</span>
+            <div class="destination-header">
+                <img id="destination-image" src="" alt="">
+                <div class="destination-info">
+                    <h2 id="destination-title"></h2>
+                    <p id="destination-description"></p>
+                </div>
+            </div>
+            
+            <div class="pricing-section">
+                <h3><i class="fas fa-tags"></i> Tarifs et Disponibilités</h3>
+                
+                <div class="pricing-cards">
+                    <!-- Carte Classic -->
+                    <div class="pricing-card classic">
+                        <div class="card-header">
+                            <h4><i class="fas fa-plane"></i> Classique</h4>
+                            <div class="price">
+                                <span class="currency">€</span>
+                                <span class="amount" id="classic-price"></span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="availability">
+                                <i class="fas fa-users"></i>
+                                <span>Places disponibles: <strong id="classic-seats"></strong></span>
+                            </div>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> Siège confortable</li>
+                                <li><i class="fas fa-check"></i> Bagage en soute inclus (20kg)</li>
+                                <li><i class="fas fa-check"></i> Collation à bord</li>
+                                <li><i class="fas fa-check"></i> Divertissement de base</li>
+                                <li><i class="fas fa-check"></i> Service client standard</li>
+                            </ul>
+                            <button class="book-btn classic-btn" onclick="bookFlight('classic')">
+                                <i class="fas fa-ticket-alt"></i> Réserver Classique
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Carte Premium -->
+                    <div class="pricing-card premium">
+                        <div class="card-header">
+                            <h4><i class="fas fa-crown"></i> Premium</h4>
+                            <div class="price">
+                                <span class="currency">€</span>
+                                <span class="amount" id="premium-price"></span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="availability">
+                                <i class="fas fa-users"></i>
+                                <span>Places disponibles: <strong id="premium-seats"></strong></span>
+                            </div>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> Siège premium extra-large</li>
+                                <li><i class="fas fa-check"></i> Bagage en soute inclus (30kg)</li>
+                                <li><i class="fas fa-check"></i> Repas gastronomique</li>
+                                <li><i class="fas fa-check"></i> Divertissement premium</li>
+                                <li><i class="fas fa-check"></i> Service conciergerie</li>
+                                <li><i class="fas fa-check"></i> Accès lounge prioritaire</li>
+                                <li><i class="fas fa-check"></i> Wi-Fi gratuit</li>
+                            </ul>
+                            <button class="book-btn premium-btn" onclick="bookFlight('premium')">
+                                <i class="fas fa-ticket-alt"></i> Réserver Premium
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flight-details">
+                <h3><i class="fas fa-info-circle"></i> Détails du Vol</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h5>Durée du vol</h5>
+                            <p id="flight-duration"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-plane-departure"></i>
+                        <div>
+                            <h5>Départ</h5>
+                            <p id="departure-time"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-plane-arrival"></i>
+                        <div>
+                            <h5>Arrivée</h5>
+                            <p id="arrival-time"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-route"></i>
+                        <div>
+                            <h5>Type de vol</h5>
+                            <p id="flight-type"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Menu mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Modal
+        function openModal() {
+            document.getElementById('reservation-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('reservation-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Ferme le modal si l'utilisateur clique en dehors du contenu du modal
+        window.onclick = function (event) {
+            var modal = document.getElementById('reservation-modal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observer les éléments à animer
+        document.querySelectorAll('.destination-card, .img-desc').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Gestion du formulaire de contact
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMessage = document.getElementById('success-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulation de l'envoi
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            // Simuler un délai d'envoi
+            setTimeout(() => {
+                // Afficher le message de succès
+                successMessage.style.display = 'flex';
+                
+                // Réinitialiser le formulaire
+                contactForm.reset();
+                
+                // Réinitialiser le bouton
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer';
+                submitBtn.disabled = false;
+                
+                // Faire défiler vers le message de succès
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 1500);
+        });
+
+        // Fonction pour masquer le message de succès
+        function hideSuccessMessage() {
+            successMessage.style.display = 'none';
+        }
+
+        // Données des destinations
+        const destinationsData = {
+            'congo': {
+                classic: { price: 450, seats: 45 },
+                premium: { price: 780, seats: 12 },
+                duration: '8h 30min',
+                departure: '09:00',
+                arrival: '17:30',
+                type: 'Vol direct'
+            },
+            'abidjan': {
+                classic: { price: 520, seats: 38 },
+                premium: { price: 890, seats: 15 },
+                duration: '7h 45min',
+                departure: '10:30',
+                arrival: '18:15',
+                type: 'Vol direct'
+            },
+            'miami': {
+                classic: { price: 680, seats: 42 },
+                premium: { price: 1200, seats: 18 },
+                duration: '9h 15min',
+                departure: '14:00',
+                arrival: '23:15',
+                type: 'Vol direct'
+            },
+            'los-angeles': {
+                classic: { price: 750, seats: 40 },
+                premium: { price: 1350, seats: 20 },
+                duration: '11h 20min',
+                departure: '13:30',
+                arrival: '00:50',
+                type: 'Vol direct'
+            },
+            'rome': {
+                classic: { price: 320, seats: 50 },
+                premium: { price: 580, seats: 25 },
+                duration: '2h 15min',
+                departure: '08:45',
+                arrival: '11:00',
+                type: 'Vol direct'
+            },
+            'paris': {
+                classic: { price: 180, seats: 60 },
+                premium: { price: 350, seats: 30 },
+                duration: '1h 10min',
+                departure: '07:00',
+                arrival: '08:10',
+                type: 'Vol direct'
+            }
+        };
+
+        // Fonction pour ouvrir le modal de destination
+        function openDestinationModal(destinationId, title, imageSrc, description) {
+            const modal = document.getElementById('destination-modal');
+            const destinationData = destinationsData[destinationId];
+            
+            if (destinationData) {
+                // Mettre à jour le contenu du modal
+                document.getElementById('destination-image').src = imageSrc;
+                document.getElementById('destination-title').textContent = title;
+                document.getElementById('destination-description').textContent = description;
+                
+                // Mettre à jour les prix et places
+                document.getElementById('classic-price').textContent = destinationData.classic.price;
+                document.getElementById('premium-price').textContent = destinationData.premium.price;
+                document.getElementById('classic-seats').textContent = destinationData.classic.seats;
+                document.getElementById('premium-seats').textContent = destinationData.premium.seats;
+                
+                // Mettre à jour les détails du vol
+                document.getElementById('flight-duration').textContent = destinationData.duration;
+                document.getElementById('departure-time').textContent = destinationData.departure;
+                document.getElementById('arrival-time').textContent = destinationData.arrival;
+                document.getElementById('flight-type').textContent = destinationData.type;
+                
+                // Afficher le modal
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Fonction pour fermer le modal de destination
+        function closeDestinationModal() {
+            document.getElementById('destination-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fonction pour réserver un vol
+        function bookFlight(category) {
+            const destinationTitle = document.getElementById('destination-title').textContent;
+            const price = category === 'classic' 
+                ? document.getElementById('classic-price').textContent 
+                : document.getElementById('premium-price').textContent;
+            
+            // Fermer le modal de destination
+            closeDestinationModal();
+            
+            // Ouvrir le modal de réservation avec les informations pré-remplies
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('date').value = '';
+            document.getElementById('destination').value = destinationTitle.toLowerCase().replace(' ', '-');
+            
+            // Afficher le modal de réservation
+            openModal();
+            
+            // Afficher une notification
+            alert(`Réservation ${category} pour ${destinationTitle} - Prix: €${price}`);
+        }
+
+        // Fermer le modal de destination si l'utilisateur clique en dehors
+        window.onclick = function (event) {
+            var reservationModal = document.getElementById('reservation-modal');
+            var destinationModal = document.getElementById('destination-modal');
+            
+            if (event.target == reservationModal) {
+                closeModal();
+            }
+            if (event.target == destinationModal) {
+                closeDestinationModal();
+            }
+        }
+    </script>
+
 </body>
 
 </html>
