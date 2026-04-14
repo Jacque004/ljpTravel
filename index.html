@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LJPTRAVEL - Voyagez en Sécurité</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="imge/logo2.png">
+</head>
+
+<body>
+    <a href="#home" class="skip-link">Aller au contenu principal</a>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <header>
+        <div class="logo">
+            <a href="index.html"> <span>LJP</span> Travel</a>
+        </div>
+        <nav class="nav-menu">
+            <ul class="menu">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#popular-destination">Destinations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- accueil section -->
+    <section id="home">
+        <div class="hero-content">
+            <h2>Nous suivre</h2>
+            <h4>Voyagez en Sécurité</h4>
+            <p>La compagnie s'engage à respecter des normes élevées en matière de sécurité et de durabilité, en
+                investissant dans des pratiques respectueuses de l'environnement
+            </p>
+            <button type="button" class="btn-reservation home-btn" onclick="openModal()">
+                Réserver Maintenant
+            </button>
+        </div>
+
+        <div class="find_trip">
+            <h3>Trouver votre voyage</h3>
+            <form action="process_reservation.php" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Pays</label>
+                        <input type="text" name="country" placeholder="Entrez un pays" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ville</label>
+                        <input type="text" name="city" placeholder="Entrez une ville" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Région</label>
+                        <input type="text" name="region" placeholder="Entrez une région">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="search-btn">
+                            Rechercher
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- à propos section -->
+    <section id="a-propos">
+        <div class="container">
+            <h1 class="title">À propos</h1>
+            <div class="img-desc">
+                <div class="left">
+                    <img src="image/logo2.png" alt="Logo LJP Travel">
+                </div>
+                <div class="right">
+                    <h3>L'entreprise LJP Travel</h3>
+                    <p class="about-lead">
+                        LJP Travel est nee d'une vision simple : rendre le voyage aerien plus accessible, plus confortable
+                        et plus responsable, sans compromis sur la securite.
+                    </p>
+
+                    <div class="about-highlights">
+                        <article class="about-card">
+                            <h4><i class="fas fa-bullseye"></i> Mission</h4>
+                            <p>Proposer des vols fiables, competitifs et humains, avec une experience passager fluide de
+                                la reservation a l'arrivee.</p>
+                        </article>
+                        <article class="about-card">
+                            <h4><i class="fas fa-eye"></i> Vision</h4>
+                            <p>Devenir une reference du transport aerien moderne en connectant Afrique, Europe et Ameriques
+                                avec un service constant.</p>
+                        </article>
+                        <article class="about-card">
+                            <h4><i class="fas fa-heart"></i> Valeurs</h4>
+                            <p>Securite, excellence operationnelle, respect des clients et engagement durable a chaque etape
+                                du parcours.</p>
+                        </article>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span>2024</span>
+                            <small>Lancement officiel</small>
+                        </div>
+                        <div class="stat-item">
+                            <span>3 continents</span>
+                            <small>Zones desservies</small>
+                        </div>
+                        <div class="stat-item">
+                            <span>100%</span>
+                            <small>Orientation securite</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section destination -->
+    <section id="popular-destination">
+        <div class="container">
+            <h3 class="title">Destinations proposées</h3>
+            <p class="section-subtitle">Choisissez votre prochaine destination parmi nos vols les plus demandes, avec des tarifs clairs et des options adaptees a votre budget.</p>
+            <div class="destination-filters" role="group" aria-label="Filtrer les destinations">
+                <button type="button" class="filter-btn is-active" data-filter="all">Toutes</button>
+                <button type="button" class="filter-btn" data-filter="business">Business</button>
+                <button type="button" class="filter-btn" data-filter="loisir">Loisir</button>
+                <button type="button" class="filter-btn" data-filter="premium">Premium</button>
+                <button type="button" class="filter-btn" data-filter="city-break">City break</button>
+            </div>
+            <div class="destinations-grid">
+                <!-- box -->
+                <div class="destination-card" data-type="loisir" onclick="openDestinationModal('congo', 'Congo Brazzaville', 'image/Congo2.jpeg', 'Le Congo Brazzaville est une destination qui gagne en popularité pour ses merveilles naturelles et sa riche culture.')">
+                    <div class="card-image">
+                        <img src="image/Congo2.jpeg" alt="Congo Brazzaville">
+                    </div>
+                    <div class="card-content">
+                        <div class="destination-top">
+                            <h4>Congo Brazzaville</h4>
+                            <span class="destination-badge">Nature</span>
+                        </div>
+                        <p>Le Congo Brazzaville est une destination qui gagne en popularité pour ses merveilles
+                            naturelles et sa riche culture.
+                        </p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 8h 30</span>
+                            <span><i class="fas fa-ticket-alt"></i> Des 450 EUR</span>
+                        </div>
+                        <div class="card-actions">
+                            <span class="click-hint destination-cta">Voir les tarifs et details</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- box -->
+                <div class="destination-card" data-type="business" onclick="openDestinationModal('abidjan', 'Abidjan', 'image/Cote_ivoire.png', 'Elle était la capitale administrative et politique du pays jusqu\'en 1983. Abidjan est la ville la plus peuplée de l\'Afrique de l\'Ouest francophone.')">
+                    <div class="card-image">
+                        <img src="image/Cote_ivoire.png" alt="Abidjan">
+                    </div>
+                    <div class="card-content">
+                        <div class="destination-top">
+                            <h4>Abidjan</h4>
+                            <span class="destination-badge">Business</span>
+                        </div>
+                        <p>Elle était la capitale administrative et politique du pays jusqu'en 1983. Abidjan est la
+                            ville la plus peuplée de l'Afrique de l'Ouest francophone.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 7h 45</span>
+                            <span><i class="fas fa-ticket-alt"></i> Des 520 EUR</span>
+                        </div>
+                        <div class="card-actions">
+                            <span class="click-hint destination-cta">Voir les tarifs et details</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- box -->
+                <div class="destination-card" data-type="loisir" onclick="openDestinationModal('miami', 'Miami', 'image/miami.jpg', 'Elle est une ville américaine située dans le sud-est de l\'État de Floride, sur la baie de Biscayne.')">
+                    <div class="card-image">
+                        <img src="image/Miami.jpg" alt="Miami">
+                    </div>
+                    <div class="card-content">
+                        <div class="destination-top">
+                            <h4>Miami</h4>
+                            <span class="destination-badge">Loisir</span>
+                        </div>
+                        <p>Elle est une ville américaine située dans le sud-est de l'État de Floride, sur la baie de
+                            Biscayne.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 9h 15</span>
+                            <span><i class="fas fa-ticket-alt"></i> Des 680 EUR</span>
+                        </div>
+                        <div class="card-actions">
+                            <span class="click-hint destination-cta">Voir les tarifs et details</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- box -->
+                <div class="destination-card" data-type="premium" onclick="openDestinationModal('los-angeles', 'Los Angeles', 'image/los-angeles.jpg', 'Officiellement nommée City of Los Angeles, elle est la plus grande ville de Californie et l\'une des plus importantes du continent américain.')">
+                    <div class="card-image">
+                        <img src="image/los-angeles.jpg" alt="Los Angeles">
+                    </div>
+                    <div class="card-content">
+                        <div class="destination-top">
+                            <h4>Los Angeles</h4>
+                            <span class="destination-badge">Premium</span>
+                        </div>
+                        <p>Officiellement nommée City of Los Angeles, elle est la plus grande ville de Californie et
+                            l'une des plus importantes du continent américain.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 11h 20</span>
+                            <span><i class="fas fa-ticket-alt"></i> Des 750 EUR</span>
+                        </div>
+                        <div class="card-actions">
+                            <span class="click-hint destination-cta">Voir les tarifs et details</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- box -->
+                <div class="destination-card" data-type="city-break" onclick="openDestinationModal('rome', 'Rome', 'image/rome.jpg', 'Elle est la capitale de l\'Italie. Située au centre ouest de la péninsule italienne, près de la mer Tyrrhénienne, elle est également la capitale de la région du Latium.')">
+                    <div class="card-image">
+                        <img src="image/rome.jpg" alt="Rome">
+                    </div>
+                    <div class="card-content">
+                        <div class="destination-top">
+                            <h4>Rome</h4>
+                            <span class="destination-badge">City break</span>
+                        </div>
+                        <p>Elle est la capitale de l'Italie. Située au centre ouest de la péninsule italienne, près de
+                            la mer Tyrrhénienne, elle est également la capitale de la région du Latium.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 2h 15</span>
+                            <span><i class="fas fa-ticket-alt"></i> Des 320 EUR</span>
+                        </div>
+                        <div class="card-actions">
+                            <span class="click-hint destination-cta">Voir les tarifs et details</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- box -->
+                <div class="destination-card" data-type="city-break" onclick="openDestinationModal('paris', 'Paris', 'image/paris.jpg', 'Est la capitale de la France et une collectivité à statut particulier. Divisée en vingt arrondissements, elle est le chef-lieu de la région Île-de-France et le siège de la métropole du Grand Paris.')">
+                    <div class="card-image">
+                        <img src="image/paris.jpg" alt="Paris">
+                    </div>
+                    <div class="card-content">
+                        <div class="destination-top">
+                            <h4>Paris</h4>
+                            <span class="destination-badge">Essentiel</span>
+                        </div>
+                        <p>Est la capitale de la France et une collectivité à statut particulier. Divisée en vingt
+                            arrondissements, elle est le chef-lieu de la région Île-de-France et le siège de la
+                            métropole du Grand Paris.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 1h 10</span>
+                            <span><i class="fas fa-ticket-alt"></i> Des 180 EUR</span>
+                        </div>
+                        <div class="card-actions">
+                            <span class="click-hint destination-cta">Voir les tarifs et details</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section -->
+    <section id="contact">
+        <div class="container">
+            <h1 class="title">Contact</h1>
+            
+            <!-- Message de confirmation -->
+            <div id="success-message" class="success-message" style="display: none;">
+                <div class="success-content">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Message envoyé avec succès !</h3>
+                    <p>Votre demande a bien été envoyée. Nous vous répondrons dans les plus brefs délais.</p>
+                    <button onclick="hideSuccessMessage()" class="close-success-btn">
+                        Fermer
+                    </button>
+                </div>
+            </div>
+            
+            <form class="contact-form" id="contact-form" action="process_contact.php" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label> Nom Complet</label>
+                        <input type="text" name="full_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Objet</label>
+                        <input type="text" name="subject" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Numéro</label>
+                        <input type="tel" name="phone_number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" id="contact-message" cols="30" rows="8" maxlength="500" placeholder="Décrivez votre besoin (max 500 caractères)" required></textarea>
+                    <small class="field-help" id="message-counter">0 / 500</small>
+                </div>
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    Envoyer
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LJP Travel</h4>
+                    <p>Voyagez en sécurité avec notre compagnie aérienne de confiance.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#a-propos">À propos</a></li>
+                        <li><a href="#popular-destination">Destinations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LJP Travel. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="reservation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2><i class="fas fa-plane"></i> Réserver maintenant</h2>
+            <form id="reservation-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Nom complet:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date"><i class="fas fa-calendar"></i> Date de réservation:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination"><i class="fas fa-map-marker-alt"></i> Destination:</label>
+                    <select id="destination" name="destination" required>
+                        <option value="">Sélectionnez une destination</option>
+                        <option value="congo">Congo Brazzaville</option>
+                        <option value="abidjan">Abidjan</option>
+                        <option value="miami">Miami</option>
+                        <option value="los-angeles">Los Angeles</option>
+                        <option value="rome">Rome</option>
+                        <option value="paris">Paris</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-check"></i> Confirmer la réservation
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Destination Détail -->
+    <div id="destination-modal" class="modal">
+        <div class="modal-content destination-detail-modal">
+            <span class="close" onclick="closeDestinationModal()">&times;</span>
+            <div class="destination-header">
+                <img id="destination-image" src="" alt="">
+                <div class="destination-info">
+                    <h2 id="destination-title"></h2>
+                    <p id="destination-description"></p>
+                </div>
+            </div>
+            
+            <div class="pricing-section">
+                <h3><i class="fas fa-tags"></i> Tarifs et Disponibilités</h3>
+                
+                <div class="pricing-cards">
+                    <!-- Carte Classic -->
+                    <div class="pricing-card classic">
+                        <div class="card-header">
+                            <h4><i class="fas fa-plane"></i> Classique</h4>
+                            <div class="price">
+                                <span class="currency">€</span>
+                                <span class="amount" id="classic-price"></span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="availability">
+                                <i class="fas fa-users"></i>
+                                <span>Places disponibles: <strong id="classic-seats"></strong></span>
+                            </div>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> Siège confortable</li>
+                                <li><i class="fas fa-check"></i> Bagage en soute inclus (20kg)</li>
+                                <li><i class="fas fa-check"></i> Collation à bord</li>
+                                <li><i class="fas fa-check"></i> Divertissement de base</li>
+                                <li><i class="fas fa-check"></i> Service client standard</li>
+                            </ul>
+                            <button class="book-btn classic-btn" onclick="bookFlight('classic')">
+                                <i class="fas fa-ticket-alt"></i> Réserver Classique
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Carte Premium -->
+                    <div class="pricing-card premium">
+                        <div class="card-header">
+                            <h4><i class="fas fa-crown"></i> Premium</h4>
+                            <div class="price">
+                                <span class="currency">€</span>
+                                <span class="amount" id="premium-price"></span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="availability">
+                                <i class="fas fa-users"></i>
+                                <span>Places disponibles: <strong id="premium-seats"></strong></span>
+                            </div>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> Siège premium extra-large</li>
+                                <li><i class="fas fa-check"></i> Bagage en soute inclus (30kg)</li>
+                                <li><i class="fas fa-check"></i> Repas gastronomique</li>
+                                <li><i class="fas fa-check"></i> Divertissement premium</li>
+                                <li><i class="fas fa-check"></i> Service conciergerie</li>
+                                <li><i class="fas fa-check"></i> Accès lounge prioritaire</li>
+                                <li><i class="fas fa-check"></i> Wi-Fi gratuit</li>
+                            </ul>
+                            <button class="book-btn premium-btn" onclick="bookFlight('premium')">
+                                <i class="fas fa-ticket-alt"></i> Réserver Premium
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flight-details">
+                <h3><i class="fas fa-info-circle"></i> Détails du Vol</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div>
+                            <h5>Durée du vol</h5>
+                            <p id="flight-duration"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div>
+                            <h5>Départ</h5>
+                            <p id="departure-time"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div>
+                            <h5>Arrivée</h5>
+                            <p id="arrival-time"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div>
+                            <h5>Type de vol</h5>
+                            <p id="flight-type"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ux-toast" class="ux-toast" role="status" aria-live="polite"></div>
+    <button type="button" id="back-to-top" class="back-to-top" aria-label="Retour en haut de page">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.removeItem('ljp-theme');
+
+        // Menu mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.menu a');
+        const reservationModal = document.getElementById('reservation-modal');
+        const destinationModal = document.getElementById('destination-modal');
+        const uxToast = document.getElementById('ux-toast');
+        const backToTopBtn = document.getElementById('back-to-top');
+        const scrollProgress = document.getElementById('scroll-progress');
+        const contactMessageField = document.getElementById('contact-message');
+        const messageCounter = document.getElementById('message-counter');
+        let selectedDestinationId = '';
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active') ? 'true' : 'false');
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Modal
+        function openModal() {
+            reservationModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            reservationModal.style.display = 'none';
+            restoreBodyScroll();
+        }
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observer les éléments à animer
+        document.querySelectorAll('.destination-card, .img-desc').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Accessibilité clavier des cartes destination
+        document.querySelectorAll('.destination-card').forEach(card => {
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            const title = card.querySelector('h4');
+            if (title) {
+                card.setAttribute('aria-label', `Voir les détails pour ${title.textContent}`);
+            }
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    card.click();
+                }
+            });
+        });
+
+        // Filtres visuels de destinations
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedFilter = button.getAttribute('data-filter');
+                filterButtons.forEach(btn => btn.classList.remove('is-active'));
+                button.classList.add('is-active');
+
+                document.querySelectorAll('.destination-card').forEach(card => {
+                    const cardType = card.getAttribute('data-type');
+                    const shouldShow = selectedFilter === 'all' || cardType === selectedFilter;
+                    card.classList.toggle('is-hidden', !shouldShow);
+                });
+            });
+        });
+
+        // Lien actif dans le menu selon la section visible
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let currentId = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 130;
+                if (window.scrollY >= top) {
+                    currentId = section.id;
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('is-active', link.getAttribute('href') === `#${currentId}`);
+            });
+
+            const scrollTop = window.scrollY;
+            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = pageHeight > 0 ? (scrollTop / pageHeight) * 100 : 0;
+            scrollProgress.style.width = `${Math.min(progress, 100)}%`;
+            backToTopBtn.classList.toggle('show', scrollTop > 420);
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        if (contactMessageField && messageCounter) {
+            contactMessageField.addEventListener('input', () => {
+                messageCounter.textContent = `${contactMessageField.value.length} / 500`;
+            });
+        }
+
+        // Gestion du formulaire de contact
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMessage = document.getElementById('success-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulation de l'envoi
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            // Simuler un délai d'envoi
+            setTimeout(() => {
+                // Afficher le message de succès
+                successMessage.style.display = 'flex';
+                
+                // Réinitialiser le formulaire
+                contactForm.reset();
+                
+                // Réinitialiser le bouton
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer';
+                submitBtn.disabled = false;
+                
+                // Faire défiler vers le message de succès
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 1500);
+        });
+
+        // Fonction pour masquer le message de succès
+        function hideSuccessMessage() {
+            successMessage.style.display = 'none';
+        }
+
+        // Données des destinations
+        const destinationsData = {
+            'congo': {
+                classic: { price: 450, seats: 45 },
+                premium: { price: 780, seats: 12 },
+                duration: '8h 30min',
+                departure: '09:00',
+                arrival: '17:30',
+                type: 'Vol direct'
+            },
+            'abidjan': {
+                classic: { price: 520, seats: 38 },
+                premium: { price: 890, seats: 15 },
+                duration: '7h 45min',
+                departure: '10:30',
+                arrival: '18:15',
+                type: 'Vol direct'
+            },
+            'miami': {
+                classic: { price: 680, seats: 42 },
+                premium: { price: 1200, seats: 18 },
+                duration: '9h 15min',
+                departure: '14:00',
+                arrival: '23:15',
+                type: 'Vol direct'
+            },
+            'los-angeles': {
+                classic: { price: 750, seats: 40 },
+                premium: { price: 1350, seats: 20 },
+                duration: '11h 20min',
+                departure: '13:30',
+                arrival: '00:50',
+                type: 'Vol direct'
+            },
+            'rome': {
+                classic: { price: 320, seats: 50 },
+                premium: { price: 580, seats: 25 },
+                duration: '2h 15min',
+                departure: '08:45',
+                arrival: '11:00',
+                type: 'Vol direct'
+            },
+            'paris': {
+                classic: { price: 180, seats: 60 },
+                premium: { price: 350, seats: 30 },
+                duration: '1h 10min',
+                departure: '07:00',
+                arrival: '08:10',
+                type: 'Vol direct'
+            }
+        };
+
+        // Fonction pour ouvrir le modal de destination
+        function openDestinationModal(destinationId, title, imageSrc, description) {
+            const destinationData = destinationsData[destinationId];
+            
+            if (destinationData) {
+                selectedDestinationId = destinationId;
+                // Mettre à jour le contenu du modal
+                document.getElementById('destination-image').src = imageSrc;
+                document.getElementById('destination-title').textContent = title;
+                document.getElementById('destination-description').textContent = description;
+                
+                // Mettre à jour les prix et places
+                document.getElementById('classic-price').textContent = destinationData.classic.price;
+                document.getElementById('premium-price').textContent = destinationData.premium.price;
+                document.getElementById('classic-seats').textContent = destinationData.classic.seats;
+                document.getElementById('premium-seats').textContent = destinationData.premium.seats;
+                
+                // Mettre à jour les détails du vol
+                document.getElementById('flight-duration').textContent = destinationData.duration;
+                document.getElementById('departure-time').textContent = destinationData.departure;
+                document.getElementById('arrival-time').textContent = destinationData.arrival;
+                document.getElementById('flight-type').textContent = destinationData.type;
+                
+                // Afficher le modal
+                destinationModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Fonction pour fermer le modal de destination
+        function closeDestinationModal() {
+            destinationModal.style.display = 'none';
+            restoreBodyScroll();
+        }
+
+        // Fonction pour réserver un vol
+        function bookFlight(category) {
+            const destinationTitle = document.getElementById('destination-title').textContent;
+            const price = category === 'classic' 
+                ? document.getElementById('classic-price').textContent 
+                : document.getElementById('premium-price').textContent;
+            
+            // Fermer le modal de destination
+            closeDestinationModal();
+            
+            // Ouvrir le modal de réservation avec les informations pré-remplies
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('date').value = '';
+            document.getElementById('destination').value = selectedDestinationId;
+            
+            // Afficher le modal de réservation
+            openModal();
+            
+            showToast(`Réservation ${category} pour ${destinationTitle} - Prix: €${price}`);
+        }
+
+        // Fermer les modals si clic à l'extérieur
+        window.addEventListener('click', function (event) {
+            if (event.target == reservationModal) {
+                closeModal();
+            }
+            if (event.target == destinationModal) {
+                closeDestinationModal();
+            }
+        });
+
+        // Fermer les modals avec la touche Echap
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                if (destinationModal.style.display === 'flex') {
+                    closeDestinationModal();
+                } else if (reservationModal.style.display === 'flex') {
+                    closeModal();
+                }
+            }
+        });
+
+        function restoreBodyScroll() {
+            if (reservationModal.style.display !== 'flex' && destinationModal.style.display !== 'flex') {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function showToast(message) {
+            uxToast.textContent = message;
+            uxToast.classList.add('show');
+            window.setTimeout(() => {
+                uxToast.classList.remove('show');
+            }, 2600);
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
+
