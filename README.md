@@ -22,13 +22,13 @@ Site vitrine de LJP Travel avec une UX modernisee : navigation fluide, formulair
 
 ### Accueil / Hero
 
-![Accueil - Hero](Docs/screenshots/a.png)
+![Accueil - Hero](image/a.png)
 
 ### Destinations proposees
 
-![Destinations](Docs/screenshots/c.png)
+![Destinations](image/c.png)
 
-> Place simplement les fichiers `a.png` et `c.png` dans `Docs/screenshots/` pour que l'affichage fonctionne sur GitHub.
+> Place simplement les fichiers `a.png` et `c.png` dans `image/` pour que l'affichage fonctionne sur GitHub.
 
 ## Stack technique
 
